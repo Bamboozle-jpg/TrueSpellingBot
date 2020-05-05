@@ -1,8 +1,8 @@
 //what's needed to access document
 const fs = require('fs');
-
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+
 
 //Reads file with token
 const info = JSON.parse(fs.readFileSync('./token.JSON'))
@@ -12,6 +12,7 @@ const findRegex = /[a-zA-Z]+/g;
 //converts file into string
 var words = fs.readFileSync('.\\words.txt').toString();
 //console.log(words);
+
 
 //test for javascript code, replies to every bruh with blink
 bot.on('message', msg=> {
@@ -33,7 +34,7 @@ bot.on('message', msg=> {
         if (msg.content.slice(0, 4) === '.add') 
         {} else {
             //makes sure it doesn't correct links
-            if (msg.content.slice(0, 8) === 'https') {} else {   
+            if (msg.content.slice(0, 8) === 'https://') {} else {   
                 //checks if word is in words.txt
                 const mWords = msg.content.toLowerCase().match(findRegex);
                 var correct;
@@ -65,6 +66,7 @@ bot.on('message', msg=> {
         }
     }
 })
+
 
 //adding words
 bot.on('message', msg=> {
