@@ -4,7 +4,9 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const token = 'NzA1ODQ4MDk2MzY5OTM0MzU5.XqywEQ.5Ho4AjEL6IaaOCjZSQE52H0DaYA';
+//Reads file with token
+const info = JSON.parse(fs.readFileSync('./token.JSON'))
+const token = info.token
 //regex for splitting message into multiple words (excludes numbers)
 const findRegex = /[a-zA-Z]+/g;
 //converts file into string
