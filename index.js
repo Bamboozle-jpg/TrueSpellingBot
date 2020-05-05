@@ -82,7 +82,6 @@ bot.on('message', msg=> {
                 fs.writeFile('.\\words.txt', words + '\n' + messageDiscord, (err) => {
                     if (err) throw err;
                     console.log('The file has been saved with ' + messageDiscord + '!');
-                    msg.channel.send('y\'all need to calm tf down');
                 });
                 //let's discord know that words.txt was updated
                 msg.channel.send(messageDiscord + ' added to list of acceptable words.');
