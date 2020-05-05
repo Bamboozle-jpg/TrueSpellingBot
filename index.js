@@ -76,7 +76,8 @@ bot.on('message', msg=> {
         const mWords = messageDiscord.toLowerCase().match(findRegex);
         var correct;
         for (word in mWords) {
-            correct = words.search('\n' + mWords[word]);
+            regex = new RegExp('\\b' + mWords[word] + '\\b');
+            correct = words.search(regex);
             if (correct == -1) {
                 //if word is not in words.txt, it updates words.txt with word, and lets console know that it has done so
                 fs.writeFile('.\\words.txt', words + '\n' + messageDiscord, (err) => {
