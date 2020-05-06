@@ -5,7 +5,7 @@ const bot = new Discord.Client();
 
 
 //Reads file with token
-const info = JSON.parse(fs.readFileSync('./token.JSON'))
+const info = JSON.parse(fs.readFileSync('./token.JSON'));
 const token = info.token
 //regex for splitting message into multiple words (excludes numbers)
 const findRegex = /[a-zA-Z]+/g;
